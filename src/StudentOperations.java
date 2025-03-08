@@ -74,6 +74,15 @@ public class StudentOperations {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              Scanner scanner = new Scanner(System.in)) {
 
+            System.out.print("Enter PRN of student to update: ");
+            int prn = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println("Select the field to update:");
+            System.out.println("1. Name\n2. Branch\n3. Batch\n4. CGPA");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
 
     }
 }
