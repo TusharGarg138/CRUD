@@ -55,11 +55,11 @@ public class StudentOperations {
             System.out.println("\n Student records");
             System.out.println("--------------------------------------");
             while (rs.next()) {
-                System.out.println("PRN " + rs.getInt("PRN")+
-                        "Name " + rs.getString("Name")+
-                        "Branch " + rs.getString("Branch")+
-                        "Batch " + rs.getString("Batch")+
-                        "CGPA " + rs.getFloat("PRN"));
+                System.out.println("PRN: " + rs.getInt("PRN")+
+                        " Name: " + rs.getString("Name")+
+                        " Branch: " + rs.getString("Branch")+
+                        " Batch: " + rs.getString("Batch")+
+                        " CGPA: " + rs.getFloat("cgpa"));
             }
             System.out.println("--------------------------------------");
 
@@ -68,5 +68,12 @@ public class StudentOperations {
         catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public static void updateStudent() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             Scanner scanner = new Scanner(System.in)) {
+
+
     }
 }
