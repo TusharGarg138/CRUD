@@ -14,5 +14,4 @@ public class Main{
         sO.viewStudent();
 
     }
-} // update
-// delete via prn
+}
