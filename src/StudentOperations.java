@@ -112,6 +112,23 @@ public class StudentOperations {
                     return;
             }
 
-
+            String sql = "UPDATE students SET " + field + " = ? WHERE PRN = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                if (choice == 4) {
+                    stmt.setFloat(1, newCgpa);
+                } else {
+                    stmt.setString(1, newValue);
+                }
+                stmt.setInt(2, prn);
+                int rowsUpdated = stmt.executeUpdate();
+                if (rowsUpdated > 0) {
+                    System.out.println("Student record updated successfully!");
+                } else {
+                    System.out.println("No record found with the given PRN.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
