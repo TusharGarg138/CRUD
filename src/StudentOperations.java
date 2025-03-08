@@ -83,6 +83,35 @@ public class StudentOperations {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+            String field = "";
+            String newValue = "";
+            float newCgpa = 0;
+            switch (choice) {
+                case 1:
+                    field = "Name";
+                    System.out.print("Enter new Name: ");
+                    newValue = scanner.nextLine();
+                    break;
+                case 2:
+                    field = "Branch";
+                    System.out.print("Enter new Branch: ");
+                    newValue = scanner.nextLine();
+                    break;
+                case 3:
+                    field = "Batch";
+                    System.out.print("Enter new Batch: ");
+                    newValue = scanner.nextLine();
+                    break;
+                case 4:
+                    field = "CGPA";
+                    System.out.print("Enter new CGPA: ");
+                    newCgpa = scanner.nextFloat();
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+                    return;
+            }
+
 
     }
 }
