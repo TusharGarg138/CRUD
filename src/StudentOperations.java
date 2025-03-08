@@ -133,6 +133,9 @@ public class StudentOperations {
     }
 
     public static void deleteStudent() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             Scanner scanner = new Scanner(System.in)) {
+
 
     }
 }
