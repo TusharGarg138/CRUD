@@ -47,5 +47,10 @@ public class StudentOperations {
 
     }
 
-
+    public static void viewStudent(){
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM students")
+        )
+    }
 }
