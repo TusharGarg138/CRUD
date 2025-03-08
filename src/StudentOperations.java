@@ -140,6 +140,17 @@ public class StudentOperations {
             int prn = scanner.nextInt();
 
             String sql = "DELETE FROM students WHERE PRN = ?";
-
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, prn);
+                int rowsDeleted = stmt.executeUpdate();
+                if (rowsDeleted > 0) {
+                    System.out.println("Student record deleted successfully!");
+                } else {
+                    System.out.println("No record found with the given PRN.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
