@@ -131,4 +131,8 @@ public class StudentOperations {
             e.printStackTrace();
         }
     }
+
+    public static void deleteStudent() {
+
+    }
 }
