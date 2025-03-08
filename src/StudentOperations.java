@@ -7,5 +7,13 @@ public class StudentOperations {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
+    // inserting student
+    public static void insertStudent() {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement stmt = conn.prepareStatement("insert into students" +
+                     "(PRN, Name, Branch, Batch, CGPA)" +
+                     "VALUES (?,?,?,?,?)")) {
 
+
+    }
 }
