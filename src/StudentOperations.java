@@ -51,6 +51,22 @@ public class StudentOperations {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM students")
-        )
+        ){
+            System.out.println("\n Student records");
+            System.out.println("--------------------------------------");
+            while (rs.next()) {
+                System.out.println("PRN " + rs.getInt("PRN")+
+                        "Name " + rs.getString("Name")+
+                        "Branch " + rs.getString("Branch")+
+                        "Batch " + rs.getString("Batch")+
+                        "CGPA " + rs.getFloat("PRN"));
+            }
+            System.out.println("--------------------------------------");
+
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }
