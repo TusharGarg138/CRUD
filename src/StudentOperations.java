@@ -136,6 +136,10 @@ public class StudentOperations {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              Scanner scanner = new Scanner(System.in)) {
 
+            System.out.print("Enter PRN of student to delete: ");
+            int prn = scanner.nextInt();
+
+            String sql = "DELETE FROM students WHERE PRN = ?";
 
     }
 }
